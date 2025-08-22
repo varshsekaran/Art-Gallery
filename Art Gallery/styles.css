@@ -1,0 +1,219 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+  
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+   flex-wrap: wrap;
+}
+
+.navbar .logo {
+  position: relative;
+  width: 50px;   /* size of the logo */
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;   /* makes the image round */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* keeps image inside circle */
+  border-radius: 50%;
+}
+
+.logo .letter {
+  position: absolute;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  pointer-events: none;  /* so the image is still clickable */
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.navbar ul li a {
+  background: url('./image/bg1.png') no-repeat center center/cover;
+  text-decoration: none;
+   font-size: clamp(16px, 2vw, 22px);
+  font-weight: bold;
+  transition: 0.3s ease;
+   -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  
+}
+
+.navbar ul li a:hover {
+  color: black;
+}
+
+
+.hero {
+  height: 80vh;
+  margin-left: 15px;
+  margin-right: 15px;
+  background-image: url('./image/bg1.png');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+}
+.hero h1{
+    font-size: 4rem;
+  font-weight: 400;
+  margin-top: 20px;
+  font-size: 5rem;
+  font-weight: bold;
+  background-image: url('./image/bg1.png'); /* same image as background */
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.589); /* white border */
+  text-stroke: 2px white;
+ font-size: clamp(2rem, 5vw, 5rem);
+}
+.hero p{
+    font-size: 1.5rem;
+  font-weight: 200;
+}
+
+
+.hero .btn {
+  display: flex;
+  padding: 12px 20px;
+  background-color: #5498ba;
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: #fff;
+  color: #1a3340;
+}
+
+.container {
+  max-width: 1224px;
+  width: 100%;
+  margin: auto;
+  padding: 40px 0;
+  margin-top: 50px;
+}
+
+.title {
+  margin-bottom: 2rem;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.photo-gallery {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+   flex-wrap: wrap;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex: 1; /* each column grows equally */
+   flex: 1 1 250px;
+}
+
+.photo img {
+  width: 100%;
+ height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.photo img:hover {
+  transform: scale(1.05);
+}
+footer {
+  margin-top: auto;
+  position: relative;
+  text-align: center;
+  padding: 20px 0 40px; /* space above the image bar */
+  color: white;
+}
+
+/* Small rectangle image bar */
+footer .footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 30px; /* height of rectangle */
+  background: url('./image/bg1.png') repeat-x center/cover;
+}
+
+/* Mobile: stack columns */
+@media (max-width: 768px) {
+  .photo-gallery {
+    flex-direction: column;
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+  .photo-gallery {
+    flex-direction: column;
+  }
+}
+/* Media Queries */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .photo-gallery {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .hero {
+    height: auto;
+    padding: 40px 20px;
+  }
+  .hero p{
+    font-size: 15px;
+  }
+}
